@@ -73,6 +73,12 @@
       登录
     </button>
   </nz-form-item>
+  <nz-form-item>
+    <button nz-button nzType="default" nzSize="large" (click)="gotoHome()" [nzLoading]="http.loading" nzBlock>
+      转跳dashboard
+    </button>
+  </nz-form-item>
+
 </form>
 <div class="other">
   其他登录方式
