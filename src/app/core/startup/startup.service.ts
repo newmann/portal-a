@@ -36,11 +36,13 @@ export class StartupService {
     ).pipe(
       // 接收其他拦截器后产生的异常消息
       catchError(([appData]) => {
+          console.error("startup中获取app-data失败：",[appData]);
           resolve(null);
           return [appData];
       })
     ).subscribe(([appData]) => {
 
+        console.log("startup中获取app-data成功：",[appData]);
       // application data
       const res: any = appData;
       // 应用信息：包括站点名、描述、年份
